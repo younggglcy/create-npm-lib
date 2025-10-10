@@ -4,6 +4,8 @@
 [![bundle][bundle-src]][bundle-href]
 [![License][license-src]][license-href]
 
+younggglcy's custom CLI tool for creating a npm library with a starter template
+
 ## License
 
 [MIT](./LICENSE) License © 2025-PRESENT [younggglcy](https://github.com/younggglcy)
