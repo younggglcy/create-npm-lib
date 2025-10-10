@@ -1,0 +1,19 @@
+catalogs:
+  bundler:
+    rolldown: 1.0.0-beta.39
+  dev:
+    typescript: ^5.9.2
+  prod:
+    commander: ^14.0.1
+  tool:
+    '@antfu/eslint-config': ^5.4.1
+    eslint: ^9.36.0
+    husky: ^9.1.7
+    lint-staged: ^16.2.3
+  types:
+    '@types/node': ^24.5.2
+
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - esbuild

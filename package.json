@@ -1,0 +1,44 @@
+{
+  "name": "@younggglcy/create-npm-lib",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.18.2",
+  "description": "younggglcy's custom CLI tool for creating a npm library with a starter template",
+  "author": {
+    "name": "younggglcy",
+    "email": "younggglcy@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "bin": {
+    "@younggglcy/create-npm-lib": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "commander": "catalog:prod"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:tool",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:tool",
+    "husky": "catalog:tool",
+    "lint-staged": "catalog:tool",
+    "rolldown": "catalog:bundler",
+    "typescript": "catalog:dev"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix --cache"
+  }
+}
