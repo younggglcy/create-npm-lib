@@ -17,6 +17,9 @@
     "bin",
     "dist"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "rolldown -c rolldown.config.ts -w",
     "build": "rolldown -c rolldown.config.ts",
