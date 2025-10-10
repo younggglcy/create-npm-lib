@@ -14,5 +14,5 @@
 [npm-version-href]: https://npmjs.com/package/@younggglcy/create-npm-lib
 [bundle-src]: https://img.shields.io/bundlephobia/minzip/@younggglcy/create-npm-lib
 [bundle-href]: https://bundlephobia.com/result?p=@younggglcy/create-npm-lib
-[license-src]: https://img.shields.io/github/license/younggglcy/@younggglcy/create-npm-lib.svg
-[license-href]: https://github.com/younggglcy/@younggglcy/create-npm-lib/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/younggglcy/create-npm-lib.svg
+[license-href]: https://github.com/younggglcy/create-npm-lib/blob/main/LICENSE
