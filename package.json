@@ -1,7 +1,7 @@
 {
   "name": "@younggglcy/create-npm-lib",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "packageManager": "pnpm@10.18.2",
   "description": "younggglcy's custom CLI tool for creating a npm library with a starter template",
   "author": {
