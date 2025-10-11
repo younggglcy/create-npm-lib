@@ -1,52 +1,46 @@
 {
-  "name": "@younggglcy/create-npm-lib",
   "type": "module",
-  "version": "0.0.4-beta.1",
-  "packageManager": "pnpm@10.18.2",
-  "description": "younggglcy's custom CLI tool for creating a npm library with a starter template",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.15.1",
+  "description": "__PKG__DESC__",
   "author": {
     "name": "younggglcy",
     "email": "younggglcy@gmail.com"
   },
   "license": "MIT",
+  "homepage": "https://github.com/younggglcy/__PKG__NAME__#readme",
   "repository": {
-    "url": "https://github.com/younggglcy/create-npm-lib"
+    "type": "git",
+    "url": "git+https://github.com/younggglcy/__PKG__NAME__.git"
   },
+  "bugs": "https://github.com/younggglcy/__PKG__NAME__/issues",
   "keywords": [],
-  "bin": {
-    "@younggglcy/create-npm-lib": "./bin/cli.js"
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "bin",
     "dist"
   ],
-  "engines": {
-    "node": ">=20"
-  },
   "scripts": {
+    "prepare": "husky",
     "dev": "rolldown -c rolldown.config.ts -w",
     "build": "rolldown -c rolldown.config.ts",
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
     "prepublishOnly": "pnpm build",
-    "typecheck": "tsc --noEmit",
-    "prepare": "husky",
     "release": "bumpp"
   },
   "dependencies": {
-    "@inquirer/prompts": "catalog:prod",
-    "chalk": "catalog:prod",
-    "commander": "catalog:prod",
-    "fs-extra": "catalog:prod",
-    "husky": "catalog:tool",
-    "node-lts-versions": "catalog:prod",
-    "rollup-plugin-copy": "catalog:bundler",
-    "semantic-release": "catalog:tool",
-    "tinyexec": "catalog:prod"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:tool",
-    "@types/fs-extra": "catalog:types",
     "@types/node": "catalog:types",
     "bumpp": "catalog:tool",
     "eslint": "catalog:tool",

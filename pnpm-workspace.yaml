@@ -1,10 +1,10 @@
 catalogs:
   bundler:
-    rolldown: 1.0.0-beta.39
+    rolldown: 1.0.0-beta.42
     rolldown-plugin-dts: ^0.16.11
     rollup-plugin-copy: ^3.5.0
   dev:
-    typescript: ^5.9.2
+    typescript: ^5.9.3
   prod:
     '@inquirer/prompts': ^7.8.6
     chalk: ^5.6.2
@@ -16,14 +16,14 @@ catalogs:
     vitest: ^3.2.4
   tool:
     '@antfu/eslint-config': ^5.4.1
-    bumpp: ^10.2.3
-    eslint: ^9.36.0
+    bumpp: ^10.3.1
+    eslint: ^9.37.0
     husky: ^9.1.7
     lint-staged: ^16.2.3
     semantic-release: ^24.2.9
   types:
     '@types/fs-extra': ^11.0.4
-    '@types/node': ^24.5.2
+    '@types/node': ^24.7.1
 
 minimumReleaseAge: 1440
 
