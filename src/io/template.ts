@@ -50,7 +50,7 @@ async function setReadme(year: number, name: string, description: string, dir: s
     path,
     await readFile(path, 'utf-8').then(content => content
       .replace('__PKG__NAME__', name)
-      .replace('__PKG_DESC__', description)
+      .replace('__PKG__DESC__', description)
       .replace('__YEAR__', String(year)),
     ),
   )

@@ -7,7 +7,7 @@
 [![Unit Test][unit-test-src]][unit-test-href]
 [![codecov][codecov-src]][codecov-href]
 
-__PKG_DESC__
+__PKG__DESC__
 
 ## License
 

@@ -2,7 +2,7 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.15.1",
-  "description": "__PKG_DESC__",
+  "description": "__PKG__DESC__",
   "author": {
     "name": "younggglcy",
     "email": "younggglcy@gmail.com"
