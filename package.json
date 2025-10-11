@@ -9,6 +9,9 @@
     "email": "younggglcy@gmail.com"
   },
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/younggglcy/create-npm-lib"
+  },
   "keywords": [],
   "bin": {
     "@younggglcy/create-npm-lib": "./bin/cli.js"
