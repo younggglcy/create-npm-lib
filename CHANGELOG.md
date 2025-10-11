@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.0.3] - 2025-10-11
+### :wrench: Chores
+- [`36034a2`](https://github.com/younggglcy/create-npm-lib/commit/36034a21659fb03c5c20d8a65212dc43d580ff92) - release v0.0.3 *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+
 ## [v0.0.2] - 2025-10-11
 ### :wrench: Chores
 - [`39433e8`](https://github.com/younggglcy/create-npm-lib/commit/39433e8da8e9654485a857e5a185585633fce742) - add repository.url to package.json to let provenance publish work *(commit by [@younggglcy](https://github.com/younggglcy))*
@@ -18,3 +23,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [v0.0.1]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.0...v0.0.1
 [v0.0.2]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.1...v0.0.2
+[v0.0.3]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.2...v0.0.3
