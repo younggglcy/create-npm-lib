@@ -1,7 +1,7 @@
 {
   "name": "@younggglcy/create-npm-lib",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4-beta.1",
   "packageManager": "pnpm@10.18.2",
   "description": "younggglcy's custom CLI tool for creating a npm library with a starter template",
   "author": {
@@ -34,17 +34,26 @@
     "release": "bumpp"
   },
   "dependencies": {
-    "commander": "catalog:prod"
+    "@inquirer/prompts": "catalog:prod",
+    "chalk": "catalog:prod",
+    "commander": "catalog:prod",
+    "fs-extra": "catalog:prod",
+    "husky": "catalog:tool",
+    "node-lts-versions": "catalog:prod",
+    "rollup-plugin-copy": "catalog:bundler",
+    "semantic-release": "catalog:tool",
+    "tinyexec": "catalog:prod"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:tool",
+    "@types/fs-extra": "catalog:types",
     "@types/node": "catalog:types",
     "bumpp": "catalog:tool",
     "eslint": "catalog:tool",
-    "husky": "catalog:tool",
     "lint-staged": "catalog:tool",
     "rolldown": "catalog:bundler",
-    "typescript": "catalog:dev"
+    "typescript": "catalog:dev",
+    "vitest": "catalog:test"
   },
   "lint-staged": {
     "*": "pnpm lint:fix --cache"
