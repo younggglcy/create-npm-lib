@@ -35,6 +35,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:tool",
     "@types/node": "catalog:types",
+    "bumpp": "catalog:tool",
     "eslint": "catalog:tool",
     "husky": "catalog:tool",
     "lint-staged": "catalog:tool",
