@@ -85,7 +85,8 @@ program
     logger.start('Commit & Add tag')
     await x`git add .`
     await x`git commit -m "chore: initial commit"`
-    await x`git tag -a v0.0.0`
+    const sha = (await x`git rev-parse HEAD`).stdout.trim()
+    await x`git tag -a v0.0.0 -m ${sha}`
     logger.end('Commit & Tag done')
 
     logger.success('All done! Happy coding :)')
