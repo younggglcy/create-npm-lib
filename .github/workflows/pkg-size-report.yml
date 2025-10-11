@@ -1,7 +1,6 @@
 name: Package Size Report
 
 permissions:
-  contents: write
   pull-requests: write
 
 on:
