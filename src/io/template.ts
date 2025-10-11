@@ -33,7 +33,7 @@ function setReleaseJob(shouldRelease: boolean, dir: string) {
   if (shouldRelease)
     return
 
-  return rm(resolve(dir, '.github/workflows/release.yml'))
+  return rm(resolve(dir, '.github/workflows/release.yml'), { force: true })
 }
 
 async function setYearForLicense(year: number, dir: string) {
