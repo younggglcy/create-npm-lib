@@ -27,7 +27,8 @@
     "lint:fix": "pnpm lint --fix",
     "prepublishOnly": "pnpm build",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "bumpp"
   },
   "dependencies": {
     "commander": "catalog:prod"
