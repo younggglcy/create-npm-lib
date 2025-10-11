@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.1.0] - 2025-10-11
+### :sparkles: New Features
+- [`1073fcf`](https://github.com/younggglcy/create-npm-lib/commit/1073fcff76e09fb653b20994bda2372706f9b2a4) - implement interactive CLI for npm library scaffolding *(PR [#4](https://github.com/younggglcy/create-npm-lib/pull/4) by [@younggglcy](https://github.com/younggglcy))*
+
+### :wrench: Chores
+- [`ab3c0ea`](https://github.com/younggglcy/create-npm-lib/commit/ab3c0ea88879056e347dc5416224d3bcc0c08966) - lockfile *(commit by [@younggglcy](https://github.com/younggglcy))*
+- [`b2e7fe0`](https://github.com/younggglcy/create-npm-lib/commit/b2e7fe096d90b30e92a4bdd7b1c667538002cb02) - release v0.1.0 *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+
 ## [v0.0.3] - 2025-10-11
 ### :wrench: Chores
 - [`36034a2`](https://github.com/younggglcy/create-npm-lib/commit/36034a21659fb03c5c20d8a65212dc43d580ff92) - release v0.0.3 *(commit by [@younggglcy](https://github.com/younggglcy))*
@@ -24,3 +33,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.0.1]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.0...v0.0.1
 [v0.0.2]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.1...v0.0.2
 [v0.0.3]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.2...v0.0.3
+[v0.1.0]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.4-beta.1...v0.1.0
