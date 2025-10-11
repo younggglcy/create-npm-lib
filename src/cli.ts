@@ -52,7 +52,7 @@ program
 
     logger.start('Copying template files')
     const __dirname = fileURLToPath(new URL('.', import.meta.url))
-    await copy(resolve(__dirname, 'template'), pkgFolder)
+    await copy(resolve(__dirname, 'template'), pkgFolder, { dereference: true })
     logger.end('Template files copied')
 
     logger.start('Modifying template files')
