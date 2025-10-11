@@ -1,0 +1,56 @@
+{
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.15.1",
+  "description": "__PKG_DESC__",
+  "author": {
+    "name": "younggglcy",
+    "email": "younggglcy@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/younggglcy/__PKG__NAME__#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/younggglcy/__PKG__NAME__.git"
+  },
+  "bugs": "https://github.com/younggglcy/__PKG__NAME__/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:tool",
+    "@types/node": "catalog:types",
+    "bumpp": "catalog:tool",
+    "eslint": "catalog:tool",
+    "lint-staged": "catalog:tool",
+    "rolldown": "catalog:bundler",
+    "rolldown-plugin-dts": "catalog:bundler",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:test"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix --cache"
+  }
+}

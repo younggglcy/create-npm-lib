@@ -1,4 +1,5 @@
 import { defineConfig } from 'rolldown'
+import copy from 'rollup-plugin-copy'
 
 export default defineConfig({
   input: {
@@ -9,4 +10,11 @@ export default defineConfig({
     format: 'esm',
   },
   platform: 'node',
+  plugins: [
+    copy({
+      targets: [
+        { src: './template', dest: 'dist' },
+      ],
+    }),
+  ],
 })
