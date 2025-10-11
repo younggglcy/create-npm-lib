@@ -1,5 +1,9 @@
 name: Package Size Report
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   pull_request:
     branches: [main] # ⬅ Add other branches you want size checks on
