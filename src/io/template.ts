@@ -49,8 +49,8 @@ async function setReadme(year: number, name: string, description: string, dir: s
   return writeFile(
     path,
     await readFile(path, 'utf-8').then(content => content
-      .replace('__PKG__NAME__', name)
-      .replace('__PKG__DESC__', description)
+      .replaceAll('__PKG__NAME__', name)
+      .replaceAll('__PKG__DESC__', description)
       .replace('__YEAR__', String(year)),
     ),
   )
@@ -59,8 +59,8 @@ async function setReadme(year: number, name: string, description: string, dir: s
 async function setPkgJson(name: string, isPrivate: boolean, description: string, dir: string) {
   const path = resolve(dir, 'package.json')
   const pkgInfo = (await readFile(path, 'utf-8'))
-    .replace('__PKG__NAME__', name)
-    .replace('__PKG__DESC__', description)
+    .replaceAll('__PKG__NAME__', name)
+    .replaceAll('__PKG__DESC__', description)
   const pkgInfoObj = JSON.parse(pkgInfo)
   pkgInfoObj.name = name
   pkgInfoObj.private = isPrivate
