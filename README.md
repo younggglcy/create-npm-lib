@@ -1,7 +1,7 @@
 # @younggglcy/create-npm-lib
 
 [![npm version][npm-version-src]][npm-version-href]
-[![bundle][bundle-src]][bundle-href]
+<!-- [![bundle][bundle-src]][bundle-href] -->
 [![License][license-src]][license-href]
 
 younggglcy's custom CLI tool for creating a npm library with a starter template
