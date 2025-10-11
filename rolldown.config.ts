@@ -19,6 +19,8 @@ export default defineConfig((arg) => {
           { src: './template', dest: 'dist' },
         ],
         copyOnce: isWatch,
+        dereference: true,
+        followSymbolicLinks: true,
       }),
     ],
   }
