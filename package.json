@@ -52,6 +52,7 @@
     "eslint": "catalog:tool",
     "lint-staged": "catalog:tool",
     "rolldown": "catalog:bundler",
+    "rolldown-plugin-dts": "catalog:bundler",
     "typescript": "catalog:dev",
     "vitest": "catalog:test"
   },
