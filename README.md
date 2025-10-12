@@ -5,6 +5,48 @@
 
 younggglcy's custom CLI tool for creating a npm library with a starter template
 
+## Screen recording example
+
+TODO:
+
+## Installation
+
+Optional: install globally
+
+```bash
+pnpm add -g @younggglcy/create-npm-lib
+```
+
+## Usage
+
+```bash
+# If it's installed globally
+cnl
+```
+
+Or just
+```bash
+pnpm dlx @younggglcy/create-npm-lib
+```
+
+See full usage:
+```bash
+cnl -h
+```
+
+## Features
+
+- [Rolldown](https://rolldown.rs/) as bundler
+- [Pnpm](https://pnpm.io/) workspace integration
+- [TypeScript](https://www.typescriptlang.org/), of course
+- CI workflows w/
+  - package size report for each pull request
+  - publish to npm with provenance, automatically create GitHub release and update CHANGELOG
+  - semantic pull request check
+  - unit tests
+  - renovate that keeps your dependencies fresh
+- [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/lint-staged/lint-staged) & [antfu's eslint config preset](https://github.com/antfu/eslint-config)
+
 ## License
 
 [MIT](./LICENSE) License © 2025-PRESENT [younggglcy](https://github.com/younggglcy)
