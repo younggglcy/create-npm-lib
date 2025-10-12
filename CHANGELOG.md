@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.1.1] - 2025-10-12
+### :bug: Bug Fixes
+- [`53d8a8b`](https://github.com/younggglcy/create-npm-lib/commit/53d8a8b7cd76419935775eca260bba6b14eba2d6) - change bin name to `create-npm-lib` *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+### :wrench: Chores
+- [`6ddc8e1`](https://github.com/younggglcy/create-npm-lib/commit/6ddc8e12f6419ae5843c31b215486726dd3b7899) - release v0.1.1 *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+
 ## [v0.1.0] - 2025-10-11
 ### :sparkles: New Features
 - [`1073fcf`](https://github.com/younggglcy/create-npm-lib/commit/1073fcff76e09fb653b20994bda2372706f9b2a4) - implement interactive CLI for npm library scaffolding *(PR [#4](https://github.com/younggglcy/create-npm-lib/pull/4) by [@younggglcy](https://github.com/younggglcy))*
@@ -34,3 +42,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.0.2]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.1...v0.0.2
 [v0.0.3]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.2...v0.0.3
 [v0.1.0]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.4-beta.1...v0.1.0
+[v0.1.1]: https://github.com/younggglcy/create-npm-lib/compare/v0.1.0...v0.1.1
