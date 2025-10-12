@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "bin": {
-    "@younggglcy/create-npm-lib": "./bin/cli.js"
+    "create-npm-lib": "./bin/cli.js"
   },
   "files": [
     "bin",
