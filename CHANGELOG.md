@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.1.2] - 2025-10-12
+### :boom: BREAKING CHANGES
+- due to [`9075a7b`](https://github.com/younggglcy/create-npm-lib/commit/9075a7b2f60924922bc2be3c2ebbf5853d966615) - change bin name to cnl *(commit by [@younggglcy](https://github.com/younggglcy))*:
+
+  change bin name to cnl
+
+
+### :bug: Bug Fixes
+- [`9075a7b`](https://github.com/younggglcy/create-npm-lib/commit/9075a7b2f60924922bc2be3c2ebbf5853d966615) - change bin name to cnl *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+### :wrench: Chores
+- [`4d00a86`](https://github.com/younggglcy/create-npm-lib/commit/4d00a8672dbdaa61164e61e5d1d18a2d56656f67) - release v0.1.2 *(commit by [@younggglcy](https://github.com/younggglcy))*
+
+
 ## [v0.1.1] - 2025-10-12
 ### :bug: Bug Fixes
 - [`53d8a8b`](https://github.com/younggglcy/create-npm-lib/commit/53d8a8b7cd76419935775eca260bba6b14eba2d6) - change bin name to `create-npm-lib` *(commit by [@younggglcy](https://github.com/younggglcy))*
@@ -43,3 +57,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.0.3]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.2...v0.0.3
 [v0.1.0]: https://github.com/younggglcy/create-npm-lib/compare/v0.0.4-beta.1...v0.1.0
 [v0.1.1]: https://github.com/younggglcy/create-npm-lib/compare/v0.1.0...v0.1.1
+[v0.1.2]: https://github.com/younggglcy/create-npm-lib/compare/v0.1.1...v0.1.2
