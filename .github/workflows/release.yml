@@ -79,6 +79,8 @@ jobs:
           file_pattern: CHANGELOG.md
           commit_user_name: younggglcy
           commit_user_email: younggglcy@gmail.com
+          commit_options: --no-edit --amend
+          push_options: --force
 
       - run: pnpm install
 
