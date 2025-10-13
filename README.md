@@ -5,7 +5,7 @@
 
 younggglcy's custom CLI tool for creating a npm library with a starter template
 
-## Screen recording example
+## Screen Recording
 
 TODO:
 
@@ -18,6 +18,8 @@ pnpm add -g @younggglcy/create-npm-lib
 ```
 
 ## Usage
+
+### CLI Usage
 
 ```bash
 # If it's installed globally
@@ -33,6 +35,13 @@ See full usage:
 ```bash
 cnl -h
 ```
+
+### GitHub Repo Setup
+
+GitHub Actions serects are in need to make CI release pipeline work.
+
+- `NPM_TOKEN` for npm package publishing (Consider migrating to [OIDC authentication](https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/) in the future)
+- (Optional)`GPG_PRIVATE_KEY` and `PASSPHRASE` for GPG commit signing. Just remove the 'Import GPG key' step if you do not want it
 
 ## Features
 
