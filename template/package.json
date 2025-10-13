@@ -29,7 +29,6 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky",
     "dev": "rolldown -c rolldown.config.ts -w",
     "build": "rolldown -c rolldown.config.ts",
     "lint": "eslint .",
