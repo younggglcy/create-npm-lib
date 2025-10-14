@@ -38,7 +38,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          # See: https://github.com/stefanzweifel/git-auto-commit-action?tab=readme-ov-file#using---amend-and---no-edit-as-commit-options
+          # Fetch the last 2 commits instead of just 1. (Fetching just 1 commit would overwrite the whole history)
+          fetch-depth: 2
 
       - uses: pnpm/action-setup@v4
 
@@ -71,15 +73,22 @@ jobs:
           body: ${{ steps.changelog.outputs.changes }}
           token: ${{ github.token }}
 
+      - name: Get last commit message
+        id: last-commit
+        run: |
+          echo "message=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
+          echo "author=$(git log -1 --pretty=\"%an <%ae>\")" >> $GITHUB_OUTPUT
+
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
-          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
           file_pattern: CHANGELOG.md
-          commit_user_name: younggglcy
-          commit_user_email: younggglcy@gmail.com
           commit_options: --no-edit --amend
+          commit_author: ${{ steps.last-commit.outputs.author }}
+          commit_message: ${{ steps.last-commit.outputs.message }}
+          push_options: --force
+          skip_fetch: true
 
       - run: pnpm install
 
