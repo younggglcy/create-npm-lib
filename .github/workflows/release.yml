@@ -1,46 +1,20 @@
 name: Release
 
-permissions:
-  id-token: write
-  contents: write
-
 on:
   push:
     tags:
       - v*
 
 jobs:
-  check_should_release:
+  release:
     runs-on: ubuntu-latest
-    outputs:
-      should_release: ${{ steps.check-tags.outputs.should_release }}
-
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-
-      # `requarks/changelog-action` requires at least 2 tags to generate changelog
-      - name: Check tag count
-        id: check-tags
-        run: |
-          TAG_COUNT=$(git tag | wc -l)
-          if [ $TAG_COUNT -ge 2 ]; then
-            echo "should_release=true" >> $GITHUB_OUTPUT
-          else
-            echo "should_release=false" >> $GITHUB_OUTPUT
-          fi
-
-  release:
-    needs: check_should_release
-    if: needs.check_should_release.outputs.should_release == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-        with:
-          # See: https://github.com/stefanzweifel/git-auto-commit-action?tab=readme-ov-file#using---amend-and---no-edit-as-commit-options
-          # Fetch the last 2 commits instead of just 1. (Fetching just 1 commit would overwrite the whole history)
-          fetch-depth: 2
 
       - uses: pnpm/action-setup@v4
 
@@ -49,51 +23,12 @@ jobs:
           node-version-file: .node-version
           registry-url: https://registry.npmjs.org/
 
-      - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v6
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          git_user_signingkey: true
-          git_commit_gpgsign: true
-
-      - id: changelog
-        uses: requarks/changelog-action@v1
-        with:
-          token: ${{ github.token }}
-          tag: ${{ github.ref_name }}
-
-      - name: Create GitHub Release
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          allowUpdates: true
-          draft: false
-          makeLatest: true
-          name: ${{ github.ref_name }}
-          body: ${{ steps.changelog.outputs.changes }}
-          token: ${{ github.token }}
-
-      - name: Get last commit message
-        id: last-commit
-        run: |
-          echo "message=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
-          echo "author=$(git log -1 --pretty=\"%an <%ae>\")" >> $GITHUB_OUTPUT
-
-      - name: Commit CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          file_pattern: CHANGELOG.md
-          commit_options: --no-edit --amend
-          commit_author: ${{ steps.last-commit.outputs.author }}
-          commit_message: ${{ steps.last-commit.outputs.message }}
-          push_options: --force
-          skip_fetch: true
-
       - run: pnpm install
 
       - run: pnpm build
 
-      - run: pnpm publish --no-git-checks -r --access public
+      - name: Publish to npm
+        run: pnpm publish --no-git-checks -r --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_CONFIG_PROVENANCE: true

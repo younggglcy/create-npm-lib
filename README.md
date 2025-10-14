@@ -41,7 +41,6 @@ cnl -h
 GitHub Actions serects are in need to make CI release pipeline work.
 
 - `NPM_TOKEN` for npm package publishing (Consider migrating to [OIDC authentication](https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/) in the future)
-- (Optional)`GPG_PRIVATE_KEY` and `PASSPHRASE` for GPG commit signing. Just remove the 'Import GPG key' step if you do not want it
 
 ## Features
 
@@ -50,7 +49,7 @@ GitHub Actions serects are in need to make CI release pipeline work.
 - [TypeScript](https://www.typescriptlang.org/), of course
 - CI workflows w/
   - package size report for each pull request
-  - publish to npm with provenance, automatically create GitHub release and update CHANGELOG
+  - publish to npm with provenance
   - semantic pull request check
   - unit tests
   - renovate that keeps your dependencies fresh
