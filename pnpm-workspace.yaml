@@ -1,3 +1,8 @@
+packages:
+  - playground
+  - packages/*
+  - examples/*
+
 catalogs:
   bundler:
     rolldown: 1.0.0-beta.42
