@@ -59,8 +59,6 @@ program
     await writeTemplate(pkgFolder, {
       ...promptResult,
       lts: await getOldestLTSName(),
-      gitUser: (await x`git config user.name`).stdout.trim() || 'user.name',
-      gitEmail: (await x`git config user.email`).stdout.trim() || 'user.email',
     })
     logger.end('Template files modified')
 

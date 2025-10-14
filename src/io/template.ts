@@ -5,17 +5,15 @@ import { capitalizeFirstLetter } from '../utils/str'
 
 interface IContext extends PromptResult {
   lts: string
-  gitUser: string
-  gitEmail: string
 }
 
 export async function writeTemplate(pkgFolder: string, context: IContext) {
-  const { packageName, isPackagePrivate, description, lts, gitEmail, gitUser } = context
+  const { packageName, isPackagePrivate, description, lts } = context
 
   const year = new Date().getFullYear()
   await Promise.all([
     writeNodeVersion(lts, pkgFolder),
-    setReleaseJob(!isPackagePrivate, gitUser, gitEmail, pkgFolder),
+    setReleaseJob(!isPackagePrivate, pkgFolder),
     setYearForLicense(year, pkgFolder),
     setReadme(year, packageName, description, pkgFolder),
     setPkgJson(packageName, isPackagePrivate, description, pkgFolder),
@@ -31,18 +29,11 @@ function writeNodeVersion(lts: string, dir: string) {
   )
 }
 
-async function setReleaseJob(shouldRelease: boolean, user: string, email: string, dir: string) {
-  const path = resolve(dir, '.github/workflows/release.yml')
-  if (shouldRelease) {
-    return writeFile(
-      path,
-      (await readFile(path, 'utf-8'))
-        .replace('younggglcy', user)
-        .replace('younggglcy@gmail.com', email),
-    )
-  }
+function setReleaseJob(shouldRelease: boolean, dir: string) {
+  if (shouldRelease)
+    return
 
-  return rm(path, { force: true })
+  return rm(resolve(dir, '.github/workflows/release.yml'), { force: true })
 }
 
 async function setYearForLicense(year: number, dir: string) {
