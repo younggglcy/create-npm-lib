@@ -12,7 +12,10 @@
   "repository": {
     "url": "https://github.com/younggglcy/create-npm-lib"
   },
-  "keywords": [],
+  "keywords": [
+    "CLI",
+    "npm library template"
+  ],
   "bin": {
     "cnl": "./bin/cli.js"
   },
