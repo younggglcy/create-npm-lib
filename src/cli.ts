@@ -10,7 +10,7 @@ import { getPrompts } from './io/prompts'
 import { writeTemplate } from './io/template'
 import { createX } from './lib/exec'
 import { logger } from './utils/logger'
-import { getOldestLTSName } from './utils/node_lts'
+import { getLatestActiveLTSVersion } from './utils/node_lts'
 
 const program = new Command()
 
@@ -58,7 +58,7 @@ program
     logger.start('Modifying template files')
     await writeTemplate(pkgFolder, {
       ...promptResult,
-      lts: await getOldestLTSName(),
+      lts: await getLatestActiveLTSVersion(),
     })
     logger.end('Template files modified')
 

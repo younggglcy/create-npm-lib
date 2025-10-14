@@ -1,7 +1,6 @@
 import type { PromptResult } from './prompts'
 import { readFile, rm, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
-import { capitalizeFirstLetter } from '../utils/str'
 
 interface IContext extends PromptResult {
   lts: string
@@ -25,7 +24,7 @@ export async function writeTemplate(pkgFolder: string, context: IContext) {
 function writeNodeVersion(lts: string, dir: string) {
   return writeFile(
     resolve(dir, '.node-version'),
-    `lts/${capitalizeFirstLetter(lts)}\n`,
+    `${lts}\n`,
   )
 }
 
