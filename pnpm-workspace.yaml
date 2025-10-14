@@ -22,6 +22,7 @@ catalogs:
   tool:
     '@antfu/eslint-config': ^5.4.1
     bumpp: ^10.3.1
+    conventional-changelog: ^7.1.1
     eslint: ^9.37.0
     husky: ^9.1.7
     lint-staged: ^16.2.3

@@ -31,12 +31,13 @@
     "prepublishOnly": "pnpm build",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
-    "release": "bumpp"
+    "release": "node --experimental-strip-types scripts/release.ts"
   },
   "dependencies": {
     "@inquirer/prompts": "catalog:prod",
     "chalk": "catalog:prod",
     "commander": "catalog:prod",
+    "conventional-changelog": "catalog:tool",
     "fs-extra": "catalog:prod",
     "husky": "catalog:tool",
     "node-lts-versions": "catalog:prod",

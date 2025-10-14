@@ -55,6 +55,10 @@ GitHub Actions serects are in need to make CI release pipeline work.
   - renovate that keeps your dependencies fresh
 - [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/lint-staged/lint-staged) & [antfu's eslint config preset](https://github.com/antfu/eslint-config)
 
+## TODO
+
+- [ ] Monorepo architecture
+
 ## License
 
 [MIT](./LICENSE) License © 2025-PRESENT [younggglcy](https://github.com/younggglcy)

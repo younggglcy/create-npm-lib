@@ -34,7 +34,7 @@
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
     "prepublishOnly": "pnpm build",
-    "release": "bumpp"
+    "release": "node --experimental-strip-types scripts/release.ts"
   },
   "dependencies": {
   },
