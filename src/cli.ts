@@ -52,7 +52,22 @@ program
 
     logger.start('Copying template files')
     const __dirname = fileURLToPath(new URL('.', import.meta.url))
-    await copy(resolve(__dirname, 'template'), pkgFolder, { dereference: true })
+    // Copy base template first
+    await copy(resolve(__dirname, 'template', 'base'), pkgFolder, { dereference: true })
+    // Overlay variant-specific files
+    const variant = promptResult.projectType
+    await copy(resolve(__dirname, 'template', variant), pkgFolder, { dereference: true, overwrite: true })
+    // For monorepo: rename __PKG__NAME__ directory
+    if (variant === 'monorepo') {
+      const pkgName = promptResult.packageName
+      const pkgsDirSrc = resolve(pkgFolder, 'packages', '__PKG__NAME__')
+      const pkgsDirDest = resolve(pkgFolder, 'packages', pkgName)
+      if (await exists(pkgsDirSrc)) {
+        await copy(pkgsDirSrc, pkgsDirDest)
+        const { rm } = await import('node:fs/promises')
+        await rm(pkgsDirSrc, { recursive: true, force: true })
+      }
+    }
     logger.end('Template files copied')
 
     logger.start('Modifying template files')
@@ -63,23 +78,23 @@ program
     logger.end('Template files modified')
 
     logger.start('Installing dependencies')
-    await x`ni`
+    await x`bun install`
     logger.end('Dependencies installed')
 
     logger.start('Updating dependencies')
-    await x`nu -L`
+    await x`bun update`
     logger.end('Dependencies updated')
 
     logger.start('Preparing husky')
-    await x`pnpm exec husky init`
+    await x`bunx husky init`
     await writeFile(
       resolve(pkgFolder, '.husky', 'pre-commit'),
-      'pnpm exec lint-staged\n',
+      'bunx lint-staged\n',
     )
     logger.end('Husky prepared')
 
     logger.start('Running lint fix')
-    await x`nr lint:fix`
+    await x`bun run lint:fix`
     logger.end('Lint fix done')
 
     logger.start('Commit & Add tag')

@@ -1,0 +1,49 @@
+{
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "__PKG__DESC__",
+  "author": {
+    "name": "younggglcy",
+    "email": "younggglcy@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/younggglcy/__PKG__NAME__#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/younggglcy/__PKG__NAME__.git"
+  },
+  "bugs": "https://github.com/younggglcy/__PKG__NAME__/issues",
+  "keywords": [],
+  "workspaces": [
+    "playground",
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts",
+    "lint": "eslint .",
+    "lint:fix": "bun run lint --fix",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun scripts/release.ts"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.4.1",
+    "@changesets/cli": "^2.29.4",
+    "@types/node": "^24.7.1",
+    "eslint": "^9.37.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "rolldown": "1.0.0-beta.42",
+    "rolldown-plugin-dts": "^0.16.11",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "*": "bun run lint:fix --cache"
+  }
+}

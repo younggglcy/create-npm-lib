@@ -1,7 +1,6 @@
 {
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.15.1",
   "description": "__PKG__DESC__",
   "author": {
     "name": "younggglcy",
@@ -32,24 +31,28 @@
     "dev": "rolldown -c rolldown.config.ts -w",
     "build": "rolldown -c rolldown.config.ts",
     "lint": "eslint .",
-    "lint:fix": "pnpm lint --fix",
-    "prepublishOnly": "pnpm build",
-    "release": "node --experimental-strip-types scripts/release.ts"
+    "lint:fix": "bun run lint --fix",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun scripts/release.ts"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:tool",
-    "@types/node": "catalog:types",
-    "bumpp": "catalog:tool",
-    "eslint": "catalog:tool",
-    "lint-staged": "catalog:tool",
-    "rolldown": "catalog:bundler",
-    "rolldown-plugin-dts": "catalog:bundler",
-    "typescript": "catalog:dev",
-    "vitest": "catalog:test"
+    "@antfu/eslint-config": "^5.4.1",
+    "@changesets/cli": "^2.29.4",
+    "@types/node": "^24.7.1",
+    "eslint": "^9.37.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "rolldown": "1.0.0-beta.42",
+    "rolldown-plugin-dts": "^0.16.11",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   },
   "lint-staged": {
-    "*": "pnpm lint:fix --cache"
+    "*": "bun run lint:fix --cache"
   }
 }

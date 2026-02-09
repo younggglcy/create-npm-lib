@@ -1,4 +1,3 @@
-// @ts-expect-error ignore it temporarily, will be fixed in new version
 import getNodeLTS from 'node-lts-versions'
 
 export async function getLatestActiveLTSVersion() {
