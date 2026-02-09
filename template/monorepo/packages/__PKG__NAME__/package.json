@@ -1,0 +1,37 @@
+{
+  "name": "__PKG__SCOPED_NAME__",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "__PKG__DESC__",
+  "author": {
+    "name": "younggglcy",
+    "email": "younggglcy@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/younggglcy/__PKG__NAME__#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/younggglcy/__PKG__NAME__.git",
+    "directory": "packages/__PKG__NAME__"
+  },
+  "bugs": "https://github.com/younggglcy/__PKG__NAME__/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts"
+  },
+  "dependencies": {}
+}

@@ -7,32 +7,12 @@ import { fileURLToPath } from 'node:url'
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const ROOT_DIR = resolve(__dirname, '..')
 
-const ac = new AbortController()
-
-process.on('SIGINT', () => {
-  console.log('!!! SIGINT !!!')
-  ac.abort()
-  process.exit(1)
-})
-process.on('uncaughtException', errorHandler)
-process.on('unhandledRejection', errorHandler)
-
-function errorHandler(err: Error) {
-  console.error('Error during release:', err)
-  process.exit(1)
-}
-
 function run(command: string) {
-  if (ac.signal.aborted) {
-    console.log('Aborted, exit.')
-    process.exit(1)
-  }
   console.log(`$ ${command}`)
   const result = spawnSync(command, {
     stdio: 'inherit',
     cwd: ROOT_DIR,
     shell: true,
-    signal: ac.signal,
   })
   if (result.status !== 0) {
     console.error(`Command failed: ${command}`)
@@ -41,7 +21,6 @@ function run(command: string) {
 }
 
 // 1. Run changeset version to consume .changeset/*.md files
-console.log('Running changeset version...')
 run('bunx changeset version')
 
 // 2. Read new version from package.json
@@ -50,14 +29,10 @@ const newVersion = pkg.version
 console.log(`New version: ${newVersion}`)
 
 // 3. Stage, commit, tag, push
-console.log('Committing and tagging...')
 run('git add -A')
 run(`git commit -m "chore: release v${newVersion}"`)
 run(`git tag v${newVersion} -m "chore: release v${newVersion}"`)
-
-console.log('Pushing to remote...')
 run('git push')
 run('git push --tags')
 
 console.log('Release done.')
-process.exit(0)
