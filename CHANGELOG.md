@@ -1,5 +1,11 @@
 # @younggglcy/create-npm-lib
 
+## 0.3.2
+
+### Patch Changes
+
+- Fix OIDC trusted publishing by upgrading npm in CI
+
 ## 0.3.1
 
 ### Patch Changes
