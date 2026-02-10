@@ -9,14 +9,14 @@
   },
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/younggglcy/create-npm-lib"
+    "url": "git+https://github.com/younggglcy/create-npm-lib.git"
   },
   "keywords": [
     "CLI",
     "npm library template"
   ],
   "bin": {
-    "cnl": "./bin/cli.js"
+    "cnl": "bin/cli.js"
   },
   "files": [
     "bin",
