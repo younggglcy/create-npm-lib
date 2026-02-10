@@ -14,7 +14,7 @@ TODO:
 Optional: install globally
 
 ```bash
-pnpm add -g @younggglcy/create-npm-lib
+bun add -g @younggglcy/create-npm-lib
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ cnl
 
 Or just
 ```bash
-pnpm dlx @younggglcy/create-npm-lib
+bunx @younggglcy/create-npm-lib
 ```
 
 See full usage:
@@ -38,14 +38,12 @@ cnl -h
 
 ### GitHub Repo Setup
 
-GitHub Actions serects are in need to make CI release pipeline work.
-
-- `NPM_TOKEN` for npm package publishing (Consider migrating to [OIDC authentication](https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/) in the future)
+The CI release pipeline uses [npm OIDC trusted publishing](https://docs.npmjs.com/generating-provenance-statements#publishing-packages-with-provenance-via-github-actions) — no `NPM_TOKEN` secret needed. Configure trusted publishing on npmjs.com for your package to enable provenance-based publishing.
 
 ## Features
 
 - [Rolldown](https://rolldown.rs/) as bundler
-- [Pnpm](https://pnpm.io/) workspace integration
+- [Bun](https://bun.sh/) workspace integration
 - [TypeScript](https://www.typescriptlang.org/), of course
 - CI workflows w/
   - package size report for each pull request
@@ -54,10 +52,6 @@ GitHub Actions serects are in need to make CI release pipeline work.
   - unit tests
   - renovate that keeps your dependencies fresh
 - [Husky](https://github.com/typicode/husky) & [lint-staged](https://github.com/lint-staged/lint-staged) & [antfu's eslint config preset](https://github.com/antfu/eslint-config)
-
-## TODO
-
-- [ ] Monorepo architecture
 
 ## License
 
